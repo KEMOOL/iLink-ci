@@ -10,7 +10,6 @@
     <script>
         globalInclude();
     </script>
-    <link rel="stylesheet" href="<?= base_url(); ?>assets/css/login.css">
 </head>
 
 <body>
@@ -41,7 +40,7 @@
                         <label for="password">Password</label>
                         <input id="password" name="password" type="password" maxlength="20" />
                     </div>
-                    <div class="login-button">
+                    <div class="submit-button">
                         <button type="submit" id="login-button">masuk</button>
                     </div>
                 </form>

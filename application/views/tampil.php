@@ -10,7 +10,6 @@
     <script>
         globalInclude();
     </script>
-    <link rel="stylesheet" href="<?= base_url(); ?>assets/css/tampil.css">
 </head>
 
 <body>
@@ -23,7 +22,7 @@
 
     <!-- content -->
     <div id="content">
-        <div class="container emp-profile">
+        <div class="container tampil-wrap">
             <h1>MY LINK</h1>
             <div class="bingkai-foto">
                 <img src="/iLink/assets/img/logo.png" class="foto-profile">

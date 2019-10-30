@@ -10,7 +10,6 @@
     <script>
         globalInclude();
     </script>
-    <link rel="stylesheet" href="<?= base_url(); ?>assets/css/registration.css">
 </head>
 
 <body>
@@ -48,7 +47,7 @@
                         <label for="repeat-password">Repeat Password</label>
                         <input id="repeat-password" name="repeat-password" type="password" maxlength="20" />
                     </div>
-                    <div class="register-button">
+                    <div class="submit-button">
                         <button type="submit" id="register-button">daftar</button>
                     </div>
                 </form>
