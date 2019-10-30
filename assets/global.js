@@ -1,4 +1,4 @@
-var url = 'http://localhost/iLink-ci/';
+var url = 'http://localhost/iLink-ci';
 function globalInclude() {
     document.write('<link rel="stylesheet" href="' + url + '/assets/css/bootstrap.css">');
     document.write('<link rel="stylesheet" href="' + url + '/assets/css/style.css">');
