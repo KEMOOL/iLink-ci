@@ -1,0 +1,33 @@
+#content{
+    color: white;
+    min-height: 100%;
+    position: relative;
+}
+h1{
+    color: black;
+}
+
+.emp-profile {
+    margin-top: 3%;
+    margin-bottom: 3%;
+    border-radius: 0.5rem;
+    width: 35em;
+    text-align: center;
+}
+.bingkai-foto{
+    text-align: center;
+}
+.foto-profile {
+    height: 7em;
+    width: 7em;
+    border-radius: 50%;
+    margin-bottom: 1.25em;
+    border: 0.1em solid black;
+}
+.foto-link {
+    height: 10em;
+    width: 10em;
+    border-radius: 50%;
+    margin-bottom: 1.25em;
+    border: 0.1em solid black;
+}
