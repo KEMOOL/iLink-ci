@@ -14,12 +14,25 @@ class auth extends CI_Controller
         if ($this->session->userdata('email')) {
             redirect('home');
         }
-        $this->form_validation->set_rules('email', 'email', 'required|trim|valid_email');
-        $this->form_validation->set_rules('password', 'password', 'required|trim');
+        $this->form_validation->set_rules('email', 'email', 'trim|valid_email');
+        $this->form_validation->set_rules('password', 'password', 'trim|callback_login_check');
         if ($this->form_validation->run() == false) {
             $this->load->view('auth/login');
         } else {
             $this->login();
+        }
+    }
+
+    public function login_check()
+    {
+        $email = $this->input->post('email');
+        $password = $this->input->post('password');
+
+        if ($email == '' || $password == '') {
+            $this->form_validation->set_message('login_check', 'Form Kosong');
+            return FALSE;
+        } else {
+            return TRUE;
         }
     }
 
@@ -39,7 +52,7 @@ class auth extends CI_Controller
                 redirect('home');
             } else {
                 $this->session->set_flashdata('pesan', '<div class="alert alert-danger" role="alert">Password salah</div>');
-                redirect('auth');
+                $this->load->view('auth/login');
             }
         } else {
             $this->session->set_flashdata('pesan', '<div class="alert alert-danger" role="alert">email tidak terdaftar</div>');
@@ -49,15 +62,10 @@ class auth extends CI_Controller
 
     public function registration()
     {
-        $this->form_validation->set_rules('username', 'username', 'required|trim');
-        $this->form_validation->set_rules('email', 'email', 'required|trim|valid_email|is_unique[user.email]', [
-            'is_unique' => 'email sudah terdaftar'
-        ]);
-        $this->form_validation->set_rules('password', 'password', 'required|trim|min_length[8]|matches[repeat-password]', [
-            'matches' => 'password tak sama',
-            'min_length' => 'password kependekan'
-        ]);
-        $this->form_validation->set_rules('repeat-password', 'repeat-password', 'required|trim|matches[repeat-password]');
+        $this->form_validation->set_rules('username', 'username', 'trim');
+        $this->form_validation->set_rules('email', 'email', 'trim|valid_email');
+        $this->form_validation->set_rules('repeat-password', 'repeat-password', 'trim');
+        $this->form_validation->set_rules('password', 'password', 'trim|min_length[8]|callback_registration_check');
 
         if ($this->form_validation->run() == false) {
             $this->load->view('auth/registration');
@@ -70,6 +78,26 @@ class auth extends CI_Controller
             $this->db->insert('user', $data);
             $this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert">Selamat</div>');
             redirect('auth');
+        }
+    }
+
+    public function registration_check()
+    {
+        $email = $this->input->post('email');
+        $username = $this->input->post('username');
+        $password = $this->input->post('password');
+        $repeat_password = $this->input->post('repeat-password');
+        $user = $this->db->get_where('user', ['email' => $email])->row_array();
+
+        if ($email == '' || $password == '' || $username == '' || $repeat_password == '') {
+            $this->form_validation->set_message('registration_check', 'Form Kosong');
+            return FALSE;
+        } elseif ($password != $repeat_password) {
+            $this->form_validation->set_message('registration_check', 'Password tidak sama');
+            return FALSE;
+        } elseif ($user) {
+            $this->form_validation->set_message('registration_check', 'Email Sudah Pernah Terdaftar');
+            return FALSE;
         }
     }
 

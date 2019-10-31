@@ -84,6 +84,21 @@ text-align: center;
     font-size: 1em;
     margin-top: -0.6em;
 }
+.submit-button{
+    text-align: center;
+}
+.submit-button button {
+    text-transform: uppercase;
+    outline: 0;
+    background: rgb(61, 63, 61);
+    width: 70%;
+    border-radius: 0.6em;
+    padding: 0.5em;
+    color: #FFFFFF;
+    border: 0 rgb(61, 63, 61);
+    font-size: 1em;
+    cursor: pointer;
+}
 .form button:hover{
     background: rgb(230, 13, 13);
 }
