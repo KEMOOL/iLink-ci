@@ -117,40 +117,40 @@
 <body>
     <!-- navbar -->
     <header>
-        <?php if (!$this->session->userdata('email')) {
-            echo '<div class="main">
-                <a class="logo" href="' . base_url() . '">
-                    <img src="assets/img/Logo_ILINK.png">
-                </a>
-                <ul>
-                    <li><a href="#">Home</a> </li>
-                    <li><a href="#">About</a> </li>
-                    <li><a href="' . base_url('auth') . '">Login</a>
-                    </li>
-                    <li><a href="' . base_url('auth/registration') . '">Sing Up</a>
-                    </li>
-                </ul>
-            </div>';
-        } else {
-            echo '<div class="main">
+        <?php if (!$this->session->userdata('email')) { ?>
+            <div class="main">
                 <a class="logo" href="<?= base_url(); ?>">
                     <img src="assets/img/Logo_ILINK.png">
                 </a>
                 <ul>
                     <li><a href="#">Home</a> </li>
-                    <li><a href="' . base_url('profile') . '">Profile</a>
+                    <li><a href="#">About</a> </li>
+                    <li><a href="<?= base_url('auth'); ?>">Login</a>
                     </li>
-                    <li><a href="' . base_url('auth/logout') . '">Logout</a>
+                    <li><a href="<?= base_url('auth/registration'); ?>">Sing Up</a>
                     </li>
                 </ul>
-            </div>';
-        } ?>
+            </div>
+        <?php } else { ?>
+            <div class="main">
+                <a class="logo" href="<?= base_url(); ?>">
+                    <img src="assets/img/Logo_ILINK.png">
+                </a>
+                <ul>
+                    <li><a href="#">Home</a> </li>
+                    <li><a href="<?= base_url('profile') ?>">Profile</a>
+                    </li>
+                    <li><a href="<?= base_url('auth/logout') ?>">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        <?php } ?>
         <div class="title">
             <h1> TEMUKAN KEMUDAHAN </h1>
             <h1> MENGELOLA AKUNMU DISINI ! </h1>
         </div>
         <div class="button">
-            <a href="#" class="btn">SIGN UP FREE!</a>
+            <a href="<?= base_url('auth/registration') ?>" class="btn">SIGN UP FREE!</a>
         </div>
         </div>
     </header>

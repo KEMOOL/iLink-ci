@@ -6,5 +6,6 @@ $('document').ready(function () {
         $('#nama_depan').removeAttr('disabled');
         $('#nama_belakang').removeAttr('disabled');
         $('#email').removeAttr('disabled');
+        $('#nama_depan').focus();
     });
 });
