@@ -26,27 +26,26 @@ $('document').ready(function () {
                 $('#announcement-modal').modal('show');
             }
             else {
-                // $.ajax({
-                //     type: 'GET',
-                //     url: 'profile.php',
-                //     data: {
-                //         opt: 'reser_pass',
-                //         old: $('#reset-password-modal #old-password').val(),
-                //         new: $('#reset-password-modal #new-password').val(),
-                //         re_new: $('#reset-password-modal #re-new-password').val()
-                //     },
-                //     success: function (response) {
-                //         if (response == 'old') {
-                //             $('#announcement-modal .modal-body>p').html('Password lama salah!');
-                //             $('#announcement-modal').modal('show');
-                //         }
-                //         else if (response == 'success') {
-                //             $('#announcement-modal .modal-body>p').html('Password anda telah berhasil direset!');
-                //             $('#announcement-modal').modal('show');
-                //         }
-                //     },
-                //     async: false
-                // });
+                $.ajax({
+                    type: 'GET',
+                    url: 'http://localhost/iLink-ci/application/controllers/profile/ubahPassword',
+                    dataType: 'json',
+                    data: {
+                        old: $('#reset-password-modal #old-password').val(),
+                        new: $('#reset-password-modal #new-password').val(),
+                        re_new: $('#reset-password-modal #re-new-password').val()
+                    },
+                    success: function (response) {
+                        if (response == 'old') {
+                            $('#announcement-modal .modal-body>p').html('Password lama salah!');
+                            $('#announcement-modal').modal('show');
+                        }
+                        else if (response == 'success') {
+                            $('#announcement-modal .modal-body>p').html('Password anda telah berhasil direset!');
+                            $('#announcement-modal').modal('show');
+                        }
+                    }
+                });
             }
         });
     });

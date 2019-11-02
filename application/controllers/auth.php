@@ -46,7 +46,8 @@ class auth extends CI_Controller
         if ($user) {
             if (password_verify($password, $user['password'])) {
                 $data = [
-                    'email' => $user['email']
+                    'email' => $user['email'],
+                    'username' => $user['username']
                 ];
                 $this->session->set_userdata($data);
                 redirect('home');
@@ -62,6 +63,10 @@ class auth extends CI_Controller
 
     public function registration()
     {
+        if ($this->session->userdata('email')) {
+            redirect('home');
+        }
+
         $this->form_validation->set_rules('username', 'username', 'trim');
         $this->form_validation->set_rules('email', 'email', 'trim|valid_email');
         $this->form_validation->set_rules('repeat-password', 'repeat-password', 'trim');

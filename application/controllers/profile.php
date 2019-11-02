@@ -35,4 +35,7 @@ class profile extends CI_Controller
             redirect('profile');
         }
     }
+
+    public function ubahPassword()
+    { }
 }
