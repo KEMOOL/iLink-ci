@@ -22,6 +22,64 @@
         </a>
     </nav>
 
+    <div id="announcement-modal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Pengumuman</h5>
+                </div>
+                <div class="modal-body">
+                    <p></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="reset-password-modal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Reset password</h5>
+                </div>
+                <div class="modal-body">
+                    <!-- <div class="form-group">
+                        <label for="nama_depan">Nama Depan</label>
+                        <input id="nama_depan" name="nama_depan" minlength="3" value="<?= $user['nama_depan'] ?>" disabled />
+                    </div> -->
+                    <h5>Password Lama</h5><input id="old-password" type="password" class="form-control" maxlength='20' value="">
+                    <h5>Password Baru</h5><input id="new-password" type="password" class="form-control" maxlength='20' value="">
+                    <h5>Konfirmasi Password Baru</h5><input id="re-new-password" type="password" class="form-control" maxlength='20' value="">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button id="save" type="button" class="btn btn-success" data-dismiss="modal">Simpan</button>
+                    <!-- <div class="form">
+                        <form class="profile-form" method="post" action="<?= base_url('profile/save'); ?>">
+                            <div class="form-group">
+                                <label for="password-lama">Nama Depan</label>
+                                <input id="password-lama" name="password-lama" />
+                            </div>
+                            <div class="form-group">
+                                <label for="password-baru">Nama Depan</label>
+                                <input id="password-baru" name="password-baru" />
+                            </div>
+                            <div class="form-group">
+                                <label for="konfirmasi-lama">Nama Depan</label>
+                                <input id="konfirmasi-lama" name="konfirmasi-password" />
+                            </div>
+                            <div class="submit-button">
+                                <button type="submit" id="simpan-button">simpan</button>
+                            </div>
+                        </form>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- content -->
     <div id="content">
         <div class="container wrap">
@@ -58,12 +116,14 @@
                     <div class="col-auto">
                         <button type="submit" id="ubah-button">Ubah</button>
                     </div>
+                    <div class="col-auto">
+                        <button type="submit" id="password-button">Change Password</button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- footer -->
     <!-- footer -->
     <footer id="footer" class="page-footer">
         <div class="footer-copyright py-3 text-center">

@@ -31,7 +31,7 @@ class profile extends CI_Controller
             $this->db->where('email', $email);
             $this->db->update('user');
 
-            $this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert">Selamat</div>');
+            // $this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert">Selamat</div>');
             redirect('profile');
         }
     }

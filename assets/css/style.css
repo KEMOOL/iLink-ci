@@ -70,6 +70,24 @@ text-align: center;
     margin: 0 auto 1em;
     padding: 1em;
 }
+.form-no-bg{
+    position: relative;
+    z-index: 1;
+    max-width: inherit;
+    margin: 0;
+    padding: 1em;
+}
+.form-no-bg input {
+    outline: 0;
+    background: #ffffff;
+    width: 100%;
+    border-radius: 0.6em;
+    border: 0.05em solid black;
+    padding: 0.7em;
+    box-sizing: border-box;
+    font-size: 1em;
+    margin-top: -0.6em;
+}
 .profile-form{
     text-align: left;
 }
@@ -126,7 +144,6 @@ h1{
     margin-bottom: 3%;
     border-radius: 0.5rem;
     width: 35em;
-    background-color: red;
     text-align: center;
 }
 .bingkai-foto{
@@ -145,6 +162,9 @@ h1{
     border-radius: 50%;
     margin-bottom: 1.25em;
     border: 0.1em solid black;
+}
+.modal-body h5{
+    margin-top: 1em;
 }
 
 #footer{
