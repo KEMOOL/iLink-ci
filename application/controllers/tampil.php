@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class tampil extends CI_Controller
+class Tampil extends CI_Controller
 {
     public function index()
     {

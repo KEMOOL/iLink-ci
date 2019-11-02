@@ -10,6 +10,7 @@
     <script>
         globalInclude();
     </script>
+    <script src="<?= base_url(); ?>assets/js/dashboard.js"></script>
 </head>
 
 <body>
@@ -28,12 +29,11 @@
                 <img src="<?= base_url() ?>assets/img/logo.png" class="foto-profile">
             </div>
             <div class="submit-button">
-                <button type="submit" id="login-button">masuk</button>
+                <button type="submit" id="add-link-button">masuk</button>
             </div>
-            <?php
-            $username = $this->session->userdata('username');
-            $query = $this->db->get_where('link', ['username' => $username]);
-            ?>
+            <div class="link">
+
+            </div>
         </div>
     </div>
 

@@ -27,7 +27,7 @@ $('document').ready(function () {
             }
             else {
                 $.ajax({
-                    type: 'GET',
+                    type: 'post',
                     url: 'http://localhost/iLink-ci/application/controllers/profile/ubahPassword',
                     dataType: 'json',
                     data: {
