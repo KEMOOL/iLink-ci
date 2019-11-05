@@ -53,6 +53,7 @@ $route['default_controller'] = 'home';
 $route['auth'] = 'auth';
 $route['profile'] = 'profile';
 $route['home'] = 'home';
+$route['dashboard'] = 'dashboard';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 $route['(:any)'] = 'tampil';

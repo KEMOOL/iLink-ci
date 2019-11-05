@@ -131,6 +131,13 @@
                     </li>
                 </ul>
             </div>
+            <div class="title">
+                <h1> TEMUKAN KEMUDAHAN </h1>
+                <h1> MENGELOLA AKUNMU DISINI ! </h1>
+            </div>
+            <div class="button">
+                <a href="<?= base_url('auth/registration') ?>" class="btn">SIGN UP FREE!</a>
+            </div>
         <?php } else { ?>
             <div class="main">
                 <a class="logo" href="<?= base_url(); ?>">
@@ -144,15 +151,15 @@
                     </li>
                 </ul>
             </div>
+            <div class="title">
+                <h1> TEMUKAN KEMUDAHAN </h1>
+                <h1> MENGELOLA AKUNMU DISINI ! </h1>
+            </div>
+            <div class="button">
+                <a href="<?= base_url('dashboard') ?>" class="btn">ADD LINK</a>
+            </div>
         <?php } ?>
-        <div class="title">
-            <h1> TEMUKAN KEMUDAHAN </h1>
-            <h1> MENGELOLA AKUNMU DISINI ! </h1>
-        </div>
-        <div class="button">
-            <a href="<?= base_url('auth/registration') ?>" class="btn">SIGN UP FREE!</a>
-        </div>
-        </div>
+
     </header>
     <!-- content -->
     <div class="konten">

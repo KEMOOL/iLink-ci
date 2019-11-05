@@ -85,6 +85,7 @@
             <h2> MY ACCOUNT</h2>
             <div class="form">
                 <form class="profile-form" method="post" action="<?= base_url('profile/save'); ?>">
+                    <?= $this->session->flashdata('pesan'); ?>
                     <div class="form-group">
                         <label for="nama_depan">Nama Depan</label>
                         <input id="nama_depan" name="nama_depan" minlength="3" value="<?= $user['nama_depan'] ?>" disabled />
@@ -166,15 +167,7 @@
                                 new: $('#reset-password-modal #new-password').val(),
                                 re_new: $('#reset-password-modal #re-new-password').val()
                             },
-                            success: function(response) {
-                                if (response == 'old') {
-                                    $('#announcement-modal .modal-body>p').html('Password lama salah!');
-                                    $('#announcement-modal').modal('show');
-                                } else if (response == 'success') {
-                                    $('#announcement-modal .modal-body>p').html('Password anda telah berhasil direset!');
-                                    $('#announcement-modal').modal('show');
-                                }
-                            }
+                            success: function(response) {}
                         });
                     }
                 });
