@@ -24,7 +24,7 @@
     <div id="content">
         <div class="container wrap">
             <div class="kepala">
-                <img src="/iLink/assets/img/logo.png" class="logo">
+                <img src="<?= base_url(); ?>assets/img/logo.png" class="logo">
                 <p>qwertyuiopasdfghjklzxcvbnm</p>
             </div>
             <div class="form">
@@ -55,7 +55,7 @@
     <footer id="footer" class="page-footer">
         <div class="footer-copyright py-3 text-center">
             <span>©2019 Copyright:</span>
-            <a id="flink" href="/iLink">iLink</a>
+            <a id="flink" href="<?= base_url(); ?>">iLink</a>
         </div>
     </footer>
 </body>
