@@ -28,13 +28,13 @@
             <div class="bingkai-foto">
                 <img src="<?= base_url() ?>assets/img/logo.png" class="foto-profile">
             </div>
-            <div class="submit-button">
+            <button class="submit-button">
                 <button type="submit" id="add-link-button">Tambah Link</button>
-            </div>
-            <div class="link">
-
-            </div>
         </div>
+        <div class="link">
+
+        </div>
+    </div>
     </div>
 
     <!-- footer -->
