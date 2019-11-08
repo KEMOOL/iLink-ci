@@ -36,24 +36,24 @@ class Profile extends CI_Controller
         }
     }
 
-    public function ubahPassword()
-    {
-        $old = $this->input->post('old');
-        $new = $this->input->post('new');
-        $password = password_hash($new, PASSWORD_DEFAULT);
-        $email = $this->session->userdata('email');
+    // public function ubahPassword()
+    // {
+    //     $old = $this->input->post('old');
+    //     $new = $this->input->post('new');
+    //     $password = password_hash($new, PASSWORD_DEFAULT);
+    //     $email = $this->session->userdata('email');
 
-        $user = $this->db->get_where('user', ['email' => $email])->row_array();
-        if (password_verify($old, $user['password'])) {
-            $this->db->set('password', $password);
-            $this->db->where('email', $email);
-            $this->db->update('user');
+    //     $user = $this->db->get_where('user', ['email' => $email])->row_array();
+    //     if (password_verify($old, $user['password'])) {
+    //         $this->db->set('password', $password);
+    //         $this->db->where('email', $email);
+    //         $this->db->update('user');
 
-            $this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert">Password berhasil diganti</div>');
-            $this->load->view('profile');
-        } else {
-            $this->session->set_flashdata('pesan', '<div class="alert alert-danger" role="alert">Password lama salah</div>');
-            redirect('profile');
-        }
-    }
+    //         $this->session->set_flashdata('pesan', '<div class="alert alert-success" role="alert">Password berhasil diganti</div>');
+    //         $this->load->view('profile');
+    //     } else {
+    //         $this->session->set_flashdata('pesan', '<div class="alert alert-danger" role="alert">Password lama salah</div>');
+    //         $this->load->view('profile');
+    //     }
+    // }
 }
